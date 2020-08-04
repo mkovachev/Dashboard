@@ -17,17 +17,17 @@ namespace Dashboard.Server.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Product>().ToTable("Items");
+            builder.Entity<Product>().ToTable("Products");
 
             builder
                 .Entity<User>()
-                .HasMany(u => u.Items)
+                .HasMany(u => u.Products)
                 .WithOne();
 
             builder
                 .Entity<Product>()
                 .HasOne(i => i.User)
-                .WithMany(u => u.Items)
+                .WithMany(u => u.Products)
                 .HasForeignKey(i => i.UserId)
                 .IsRequired();
             //.OnDelete(DeleteBehavior.Restrict);
