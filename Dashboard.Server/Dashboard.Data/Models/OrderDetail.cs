@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dashboard.Data.Models
 {
@@ -9,12 +10,14 @@ namespace Dashboard.Data.Models
     {
         public string Id { get; set; }
 
-        [Range(0, 10000)]
+        [Range(0, 100000)]
         [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal OrderTotal { get; set; }
 
         [Range(0, 10000)]
         [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal ProductPrice { get; set; }
 
         public DateTime OrderPlaced { get; set; }

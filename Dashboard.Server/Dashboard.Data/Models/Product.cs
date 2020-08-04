@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dashboard.Data.Models
 {
@@ -15,6 +16,10 @@ namespace Dashboard.Data.Models
         public string Description { get; set; }
 
         public string ImageUrl { get; set; }
+
+        [Range(0, 10000)]
+        [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
         public bool IsTaxable { get; set; }
         public bool IsArchived { get; set; }
