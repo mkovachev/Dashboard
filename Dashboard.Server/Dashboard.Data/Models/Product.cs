@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using static Dashboard.Server.Data.DataValidator.Item;
+using static Dashboard.Data.DataValidator.Item;
 
-namespace Dashboard.Server.Data.Models
+namespace Dashboard.Data.Models
 {
     public class Product
     {

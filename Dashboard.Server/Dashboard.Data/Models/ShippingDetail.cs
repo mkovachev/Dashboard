@@ -1,5 +1,4 @@
 ﻿using Dashboard.Data.Contracts;
-using Dashboard.Server.Data.Models;
 using System;
 using System.ComponentModel.DataAnnotations;
 

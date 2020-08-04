@@ -1,3 +1,4 @@
+using Dashboard.Web.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,7 +19,14 @@ namespace Dashboard.Server.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services
+                .AddDatabase(this.Configuration)
+                .AddIdentity()
+                .AddJwtAuthentication(services.GetAppSettings(this.Configuration))
+                .AddApplicationServices()
+                .AddSwagger()
+                .AddControllers()
+                .AddNewtonsoftJson();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -28,16 +36,15 @@ namespace Dashboard.Server.Web
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseSwaggerUI()
+               .UseRouting()
+               .UseCors(options => options.AllowAnyOrigin()
+                                          .AllowAnyHeader()
+                                          .AllowAnyMethod())
+                .UseAuthentication()
+                .UseAuthorization()
+                .UseEndpoints(endpoints => endpoints.MapControllers())
+                .ApplyMigrations();
         }
     }
 }

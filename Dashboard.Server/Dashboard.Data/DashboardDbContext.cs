@@ -1,8 +1,8 @@
-using Dashboard.Server.Data.Models;
+using Dashboard.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Dashboard.Server.Data
+namespace Dashboard.Data
 {
     public class DashboardDbContext : IdentityDbContext<User>
     {
@@ -32,7 +32,7 @@ namespace Dashboard.Server.Data
                 .IsRequired();
             //.OnDelete(DeleteBehavior.Restrict);
 
-            //builder.Entity<Item>()
+            //builder.Entity<Product>()
             //    .Property(i => i.UserId)
             //    .IsRequired();
 

@@ -1,4 +1,4 @@
-﻿namespace Dashboard.Server.Data
+﻿namespace Dashboard.Data
 {
     public class DataValidator
     {

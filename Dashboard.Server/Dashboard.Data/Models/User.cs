@@ -1,10 +1,9 @@
 ﻿using Dashboard.Data.Contracts;
-using Dashboard.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 
-namespace Dashboard.Server.Data.Models
+namespace Dashboard.Data.Models
 {
     public class User : IdentityUser, IAuditable, IDeletable
     {
