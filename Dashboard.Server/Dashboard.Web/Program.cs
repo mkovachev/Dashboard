@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Dashboard.Web
+namespace Dashboard.Server.Web
 {
     public class Program
     {

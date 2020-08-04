@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 
-namespace Dashboard.Data.Models
+namespace Dashboard.Server.Data.Models
 {
     public class User : IdentityUser
     {
