@@ -13,23 +13,34 @@ namespace Dashboard.Data
 
         }
 
-        public DbSet<Product> Items { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<ShippingDetail> ShippingDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Product>().ToTable("Products");
+            builder.Entity<Category>().ToTable("Categories");
+            builder.Entity<Order>().ToTable("Orders");
+            builder.Entity<OrderDetail>().ToTable("OrderDetails");
+            builder.Entity<ShippingDetail>().ToTable("ShippingDetails");
+            builder.Entity<Image>().ToTable("Images");
 
-            builder
-                .Entity<User>()
-                .HasMany(u => u.Products)
-                .WithOne();
+            //builder.Entity<Product>().ToTable("Products");
 
-            builder
-                .Entity<Product>()
-                .HasOne(i => i.User)
-                .WithMany(u => u.Products)
-                .HasForeignKey(i => i.UserId)
-                .IsRequired();
+            //builder
+            //    .Entity<User>()
+            //    .HasMany(u => u.Products)
+            //    .WithOne();
+
+            //builder
+            //    .Entity<Product>()
+            //    .HasOne(i => i.User)
+            //    .WithMany(u => u.Products)
+            //    .HasForeignKey(i => i.UserId)
+            //    .IsRequired();
             //.OnDelete(DeleteBehavior.Restrict);
 
             //builder.Entity<Product>()

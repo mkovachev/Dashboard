@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using static Dashboard.Data.DataValidator.Item;
 
 namespace Dashboard.Data.Models
 {
@@ -7,7 +6,7 @@ namespace Dashboard.Data.Models
     {
         public int Id { get; set; }
 
-        [MaxLength(ItemsDescriptionMaxLength)]
+        [MaxLength(DataValidator.ProductDescriptionMaxLength)]
         public string Description { get; set; }
 
         //[Required]
