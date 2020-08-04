@@ -3,7 +3,7 @@ using static Dashboard.Server.Data.DataValidator.Item;
 
 namespace Dashboard.Server.Data.Models
 {
-    public class Item
+    public class Product
     {
         public int Id { get; set; }
 

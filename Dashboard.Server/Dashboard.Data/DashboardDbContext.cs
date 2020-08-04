@@ -13,11 +13,11 @@ namespace Dashboard.Server.Data
 
         }
 
-        public DbSet<Item> Items { get; set; }
+        public DbSet<Product> Items { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Item>().ToTable("Items");
+            builder.Entity<Product>().ToTable("Items");
 
             builder
                 .Entity<User>()
@@ -25,7 +25,7 @@ namespace Dashboard.Server.Data
                 .WithOne();
 
             builder
-                .Entity<Item>()
+                .Entity<Product>()
                 .HasOne(i => i.User)
                 .WithMany(u => u.Items)
                 .HasForeignKey(i => i.UserId)
