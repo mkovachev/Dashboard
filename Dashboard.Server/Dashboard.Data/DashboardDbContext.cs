@@ -14,6 +14,7 @@ namespace Dashboard.Data
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductInventory> ProductInventories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
@@ -22,6 +23,7 @@ namespace Dashboard.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Product>().ToTable("Products");
+            builder.Entity<ProductInventory>().ToTable("ProductInventories");
             builder.Entity<Category>().ToTable("Categories");
             builder.Entity<Order>().ToTable("Orders");
             builder.Entity<OrderDetail>().ToTable("OrderDetails");
