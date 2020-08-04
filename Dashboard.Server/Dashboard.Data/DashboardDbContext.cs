@@ -5,9 +5,9 @@ namespace Dashboard.Data
 {
     public class DashboardDbContext : IdentityDbContext
     {
-        public DashboardDBContext() { }
+        public DashboardDbContext() { }
 
-        public DashboardDBContext(DbContextOptions options) : base(options)
+        public DashboardDbContext(DbContextOptions options) : base(options)
         {
 
         }
