@@ -15,6 +15,7 @@ namespace Dashboard.Data
 
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductInventory> ProductInventories { get; set; }
+        public DbSet<Item> Items { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
@@ -26,6 +27,7 @@ namespace Dashboard.Data
             builder.Entity<ProductInventory>().ToTable("ProductInventories");
             builder.Entity<Category>().ToTable("Categories");
             builder.Entity<Order>().ToTable("Orders");
+            builder.Entity<Item>().ToTable("Items");
             builder.Entity<OrderDetail>().ToTable("OrderDetails");
             builder.Entity<ShippingDetail>().ToTable("ShippingDetails");
             builder.Entity<Image>().ToTable("Images");

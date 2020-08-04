@@ -11,6 +11,7 @@ namespace Dashboard.Data.Models
         public ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 
         public ICollection<ShippingDetail> ShippingDetails { get; set; } = new List<ShippingDetail>();
+        public ICollection<Item> Items { get; set; } = new List<Item>();
 
         public bool IsPaid { get; set; }
 
