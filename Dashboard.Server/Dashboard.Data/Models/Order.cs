@@ -12,6 +12,8 @@ namespace Dashboard.Data.Models
 
         public ICollection<ShippingDetail> ShippingDetails { get; set; } = new List<ShippingDetail>();
 
+        public bool IsPaid { get; set; }
+
         public string UserId { get; set; }
 
         public User User { get; set; }
