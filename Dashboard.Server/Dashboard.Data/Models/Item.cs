@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using static Dashboard.Server.Data.DataValidator.Item;
+using static Dashboard.Data.DataValidator.Item;
 
 namespace Dashboard.Data.Models
 {
